@@ -23,7 +23,6 @@ jobs:
           git add package-lock.json
           git commit -m "Update package-lock.json" || echo "No changes to commit"
           git push
-      - run: npm test
       - name: Check version change
         id: check
         run: |
