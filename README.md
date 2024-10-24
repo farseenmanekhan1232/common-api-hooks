@@ -1,3 +1,5 @@
+### This is a fork of the original [React Hooks](https://marketplace.visualstudio.com/items?itemName=AyushmaanSingh.react-hooks) extension.
+
 ![React Hooks Demo](https://i.ibb.co/wQSfKPk/react-hooks-demo.gif)
 
 ## Features
@@ -24,7 +26,7 @@ List of hooks available:
 
 Contributions are welcome! If you'd like to add more useful hooks or improve the existing ones, feel free to contribute.
 
-## Creator
+## Actual Creator
 
 This extension is created and maintained by the following person.
 
