@@ -1,6 +1,5 @@
-Here's the updated README in plain markdown format:
 
-```markdown
+
 # Common API Hooks
 
 This is a fork of the original [React Hooks](https://marketplace.visualstudio.com/items?itemName=AyushmaanSingh.react-hooks) VSCode extension, converted into an npm package that can be run with npx.
@@ -19,7 +18,7 @@ This is a fork of the original [React Hooks](https://marketplace.visualstudio.co
 
 npx common-api-hooks
 
-````plaintext
+````
 
 3. Find your hooks in the `src/hooks`, `src/app/hooks`, or `app/hooks` directory, depending on your project structure.
 
@@ -77,6 +76,3 @@ Ayushmaan Singh
 
 This project is licensed under the [MIT License](LICENSE).
 
-```plaintext
-
-```
