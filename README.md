@@ -1,17 +1,27 @@
-### This is a fork of the original [React Hooks](https://marketplace.visualstudio.com/items?itemName=AyushmaanSingh.react-hooks) extension.
+Here's the updated README in plain markdown format:
 
-![React Hooks Demo](https://i.ibb.co/wQSfKPk/react-hooks-demo.gif)
+```markdown
+# Common API Hooks
+
+This is a fork of the original [React Hooks](https://marketplace.visualstudio.com/items?itemName=AyushmaanSingh.react-hooks) VSCode extension, converted into an npm package that can be run with npx.
 
 ## Features
 
-- Easily customize or extend hooks to suit your needs.
+- Easily add common API hooks to your React project.
+- Customize or extend hooks to suit your needs.
 - Save time and reduce boilerplate code in your React projects.
 
 ## Usage
 
-1. Open the command palette (Ctrl+Shift+P or Cmd+Shift+P).
-2. Type **"React Hooks"** and select the command to generate the hooks folder in your current workspace.
-3. Find your hooks in the `src/hooks` or `app/hooks` directory, depending on your project structure.
+1. Navigate to your React project directory in the terminal.
+2. Run the following command:
+```
+
+npx common-api-hooks
+
+````plaintext
+
+3. Find your hooks in the `src/hooks`, `src/app/hooks`, or `app/hooks` directory, depending on your project structure.
 
 ## Hooks
 
@@ -21,24 +31,52 @@ List of hooks available:
 - **`useThrottle`**: Throttles a callback function for a specified delay.
 - **`useFetch`**: Fetches data from a specified URL.
 - **`useLocalStorage`**: Synchronizes state with `localStorage`.
+- **`useApi`**: A versatile hook for making API requests with different HTTP methods.
+- **`usePagination`**: Manages paginated API requests, including page navigation and data fetching.
+- **`useInfiniteScroll`**: Implements infinite scrolling, automatically fetching more data as the user scrolls.
+
+## Example Usage
+
+After running the npx command, you can use the hooks in your React components like this:
+
+```jsx
+import { useApi } from './hooks/useApi';
+
+function MyComponent() {
+const { data, loading, error, request } = useApi('https://api.example.com');
+
+React.useEffect(() => {
+ request('/users');
+}, [request]);
+
+if (loading) return <div>Loading...</div>;
+if (error) return <div>Error: {error.message}</div>;
+
+return (
+ <div>
+   {data && data.map(user => <div key={user.id}>{user.name}</div>)}
+ </div>
+);
+}
+````
 
 ## Contribution
 
-Contributions are welcome! If you'd like to add more useful hooks or improve the existing ones, feel free to contribute.
+Contributions are welcome! If you'd like to add more useful hooks or improve the existing ones, feel free to open a pull request or an issue on the GitHub repository.
 
-## Actual Creator
+## Original Creator
 
-This extension is created and maintained by the following person.
-
-<img src="https://i.ibb.co/mNcZ84m/Avatar.jpg" alt="Ayushmaan Singh" width="100" height="100" style="border-radius: 50%;">
+The original React Hooks VSCode extension was created and maintained by:
 
 Ayushmaan Singh
-
-## Connect
 
 - [Twitter](https://twitter.com/ayushmxxn)
 - [GitHub](https://github.com/ayushmxxn)
 
 ## License
 
-This extension is licensed under the [MIT License](LICENSE).
+This project is licensed under the [MIT License](LICENSE).
+
+```plaintext
+
+```
