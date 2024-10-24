@@ -1,0 +1,31 @@
+name: common-api-hooks
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          registry-url: https://registry.npmjs.org/
+      - run: npm ci
+      - run: npm test
+      - name: Check version change
+        id: check
+        run: |
+          PACKAGE_VERSION=$(node -p "require('./package.json').version")
+          NPM_VERSION=$(npm view . version || echo '0.0.0')
+          if [ "$PACKAGE_VERSION" != "$NPM_VERSION" ]; then
+            echo "::set-output name=changed::true"
+          fi
+      - name: Publish to npm
+        if: steps.check.outputs.changed == 'true'
+        run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.npm_token}}
