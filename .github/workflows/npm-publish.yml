@@ -1,4 +1,4 @@
-name: common-api-hooks
+name: Node.js Package
 
 on:
   push:
@@ -14,7 +14,15 @@ jobs:
         with:
           node-version: 20
           registry-url: https://registry.npmjs.org/
-      - run: npm ci
+      - name: Install dependencies
+        run: npm install
+      - name: Commit updated package-lock.json
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add package-lock.json
+          git commit -m "Update package-lock.json" || echo "No changes to commit"
+          git push
       - run: npm test
       - name: Check version change
         id: check
