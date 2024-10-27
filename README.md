@@ -2,7 +2,7 @@
 
 # Common API Hooks
 
-This is a fork of the original [React Hooks](https://marketplace.visualstudio.com/items?itemName=AyushmaanSingh.react-hooks) VSCode extension, converted into an npm package that can be run with npx.
+This is a fork of the original [React Hooks](https://marketplace.visualstudio.com/items?itemName=AyushmaanSingh.custom-react-hooks) VSCode extension, converted into an npm package that can be run with npx.
 
 ## Features
 
@@ -75,4 +75,3 @@ Ayushmaan Singh
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
-
